@@ -21,9 +21,10 @@ class CustomButton extends StatelessWidget {
       this.borderOpacity = 0.3,
       this.sizeStyle = CustomBottomSizeStyle.WRAP_CONTENT,
       this.fontWeight = FontWeight.w500,
-      this.rightIcon,
+      this.leftIcon,
       this.minWidth = 60.0,
       this.borderColor = Colors.grey,
+      this.maxLine = 1,
       this.onTap});
 
   final String text;
@@ -40,7 +41,8 @@ class CustomButton extends StatelessWidget {
   final Color borderColor;
   final int sizeStyle;
   final double minWidth;
-  final Widget? rightIcon;
+  final Widget? leftIcon;
+  final int maxLine;
   final VoidCallback? onTap;
 
   @override
@@ -71,20 +73,29 @@ class CustomButton extends StatelessWidget {
             alignment: Alignment.center,
             child: ConstrainedBox(
               constraints: BoxConstraints(minWidth: minWidth),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (rightIcon != null) ..._buildRightIcon(),
-                  CustomText(
-                    text,
-                    maxLine: 1,
-                    color: textColor,
-                    fontSize: fontSize,
-                    fontWeight: fontWeight,
-                    align: textAlignment,
-                  ),
-                ],
-              ),
+              child: leftIcon != null
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ..._buildLeftIcon(),
+                        CustomText(
+                          text,
+                          maxLine: maxLine,
+                          color: textColor,
+                          fontSize: fontSize,
+                          fontWeight: fontWeight,
+                          align: textAlignment,
+                        ),
+                      ],
+                    )
+                  : CustomText(
+                      text,
+                      maxLine: maxLine,
+                      color: textColor,
+                      fontSize: fontSize,
+                      fontWeight: fontWeight,
+                      align: textAlignment,
+                    ),
             ),
           ),
           onTap: onTap,
@@ -93,11 +104,11 @@ class CustomButton extends StatelessWidget {
     );
   }
 
-  _buildRightIcon() {
+  _buildLeftIcon() {
     return [
       SizedBox(
         width: 24.0,
-        child: rightIcon,
+        child: leftIcon,
       ),
       SizedBox(width: 12.0),
     ];
