@@ -33,6 +33,9 @@ dependencies:
   # Network
   connectivity_plus: ^1.1.0
 
+  # Bloc
+  flutter_bloc: ^8.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
