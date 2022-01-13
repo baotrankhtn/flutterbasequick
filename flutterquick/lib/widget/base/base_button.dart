@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutterquick/values/font_sizes.dart';
 
-import 'custom_text.dart';
+import 'base_text.dart';
 
-class CustomBottomSizeStyle {
+class BaseBottomSizeStyle {
   static const WRAP_CONTENT = 0;
   static const MATCH_PARENT = 1;
 }
 
-class CustomButton extends StatelessWidget {
-  CustomButton(this.text,
+class BaseButton extends StatelessWidget {
+  BaseButton(this.text,
       {this.textColor = Colors.white,
       this.textAlignment = TextAlign.center,
-      this.fontSize = FontSize.MEDIUM,
+      this.fontSize = BaseFontSize.MEDIUM,
       this.padding = const EdgeInsets.all(8),
       this.tintColor = Colors.white,
       this.backgroundColor = Colors.black,
       this.borderRadius = 4,
       this.borderWidth = 0,
       this.borderOpacity = 0.3,
-      this.sizeStyle = CustomBottomSizeStyle.WRAP_CONTENT,
+      this.sizeStyle = BaseBottomSizeStyle.WRAP_CONTENT,
       this.fontWeight = FontWeight.w500,
       this.leftIcon,
       this.minWidth = 60.0,
@@ -47,7 +47,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return sizeStyle == CustomBottomSizeStyle.WRAP_CONTENT
+    return sizeStyle == BaseBottomSizeStyle.WRAP_CONTENT
         ? Row(
             children: [_buildChild()],
           )
@@ -78,7 +78,7 @@ class CustomButton extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ..._buildLeftIcon(),
-                        CustomText(
+                        BaseText(
                           text,
                           maxLine: maxLine,
                           color: textColor,
@@ -88,7 +88,7 @@ class CustomButton extends StatelessWidget {
                         ),
                       ],
                     )
-                  : CustomText(
+                  : BaseText(
                       text,
                       maxLine: maxLine,
                       color: textColor,

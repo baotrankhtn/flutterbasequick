@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutterquick/values/font_sizes.dart';
 
-class CustomText extends StatelessWidget {
-  CustomText(this.text,
+class BaseText extends StatelessWidget {
+  BaseText(this.text,
       {this.fontFamily,
       this.fontStyle = FontStyle.normal,
       this.color = Colors.black,
-      this.fontSize = FontSize.MEDIUM,
+      this.fontSize = BaseFontSize.MEDIUM,
       this.padding = const EdgeInsets.all(0),
       this.margin = const EdgeInsets.all(0),
       this.maxLine,

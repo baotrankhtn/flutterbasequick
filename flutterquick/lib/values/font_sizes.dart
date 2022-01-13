@@ -1,5 +1,5 @@
-class FontSize {
-  FontSize._();
+class BaseFontSize {
+  BaseFontSize._();
 
   static const double SMALL_3 = 6;
   static const double SMALL_2 = 8;
