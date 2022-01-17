@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-class DateTimeUtils {
+class BaseDateTimeUtils {
   static String convertToDateString(String input,
       {String inputFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
       String outputFormat = "dd/MM/yyyy"}) {
