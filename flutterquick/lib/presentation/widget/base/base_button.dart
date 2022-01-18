@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterquick/values/font_sizes.dart';
+import 'package:flutterquick/common/values/font_sizes.dart';
 
 import 'base_text.dart';
 
