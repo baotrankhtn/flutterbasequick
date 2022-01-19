@@ -1,5 +1,10 @@
 import 'package:intl/intl.dart';
 
+/*
+ * Created on Wed Jan 19 2022 by baotran
+ * Copyright (c) 2022
+ */
+
 class BaseDateTimeUtils {
   static String convertToDateString(String input,
       {String inputFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",

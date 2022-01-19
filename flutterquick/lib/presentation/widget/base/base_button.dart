@@ -3,6 +3,11 @@ import 'package:flutterquick/common/values/font_sizes.dart';
 
 import 'base_text.dart';
 
+/*
+ * Created on Wed Jan 19 2022 by baotran
+ * Copyright (c) 2022
+ */
+
 class BaseBottomSizeStyle {
   static const WRAP_CONTENT = 0;
   static const MATCH_PARENT = 1;

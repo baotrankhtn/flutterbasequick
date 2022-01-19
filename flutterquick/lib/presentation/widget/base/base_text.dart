@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutterquick/common/values/font_sizes.dart';
 
+/*
+ * Created on Wed Jan 19 2022 by baotran
+ * Copyright (c) 2022
+ */
+
 class BaseText extends StatelessWidget {
   BaseText(this.text,
       {this.fontFamily,

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+/*
+ * Created on Wed Jan 19 2022 by baotran
+ * Copyright (c) 2022
+ */
+
 extension BaseColorExtension on Color {
   ///
   /// https://medium.com/@filipvk/creating-a-custom-color-swatch-in-flutter-554bcdcb27f3
