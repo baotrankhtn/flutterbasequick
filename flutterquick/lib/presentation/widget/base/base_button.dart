@@ -78,13 +78,15 @@ class BaseButton extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ..._buildLeftIcon(),
-                        BaseText(
-                          text,
-                          maxLine: maxLine,
-                          color: textColor,
-                          fontSize: fontSize,
-                          fontWeight: fontWeight,
-                          align: textAlignment,
+                        Flexible(
+                          child: BaseText(
+                            text,
+                            maxLine: maxLine,
+                            color: textColor,
+                            fontSize: fontSize,
+                            fontWeight: fontWeight,
+                            align: textAlignment,
+                          ),
                         ),
                       ],
                     )
@@ -110,7 +112,7 @@ class BaseButton extends StatelessWidget {
         width: 24.0,
         child: leftIcon,
       ),
-      SizedBox(width: 12.0),
+      const SizedBox(width: 12.0),
     ];
   }
 }
