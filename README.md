@@ -20,8 +20,32 @@ flutter packages upgrade
 ```
 
 ## 2. Project structure
+
 ### 2.1. Resources: images/icons, launcher icons, fonts, localization, colors, dimens
+
 *ic_* prefix for icons, *img_* prefix for images
+
+#### Create directories
+```  
+mkdir -p assets assets/fonts assets/images assets/images/2.0x assets/images/3.0x assets/launchers assets/colors assets/dimens
+```
+
+#### Create sample files: colors, dimens
+```
+touch assets/colors/colors.xml; echo "<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="xyz">#979797</color>
+    <color name="xyz_material" type="material">#CF2A2A</color>
+</resources>" >> assets/colors/colors.xml
+```
+
+```
+touch assets/dimens/dimens.dart; echo "class AppDimen {
+  AppDimen._();
+  static const double xyz = 16.0;
+}" >> assets/dimens/dimens.dart
+```
+
 #### Sample *pubspec.yaml*
 
 ```
@@ -85,41 +109,17 @@ flutter:
           weight: 400
 ```
 
-#### Create directories
-```  
-mkdir -p assets assets/fonts assets/images assets/images/2.0x assets/images/3.0x assets/launchers assets/colors assets/dimens
-```
-
-#### Create sample files: colors, dimens
-```
-touch assets/colors/colors.xml; echo "<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="xyz">#979797</color>
-    <color name="xyz_material" type="material">#CF2A2A</color>
-</resources>" >> assets/colors/colors.xml
-```
-
-```
-touch assets/dimens/dimens.dart; echo "class AppDimen {
-  AppDimen._();
-  static const double xyz = 16.0;
-}" >> assets/dimens/dimens.dart
-```
-
 #### Generation
-Generate **images, icons, fonts,...**
 ```  
-flutter pub run build_runner build --delete-conflicting-outputs  
-```  
-
-Generate **launcher icons**
-```  
-flutter pub run flutter_launcher_icons:main
+flutter pub run build_runner build --delete-conflicting-outputs REM generate images, icons, fonts, colors
 ```  
 
-Generate **localizations (if needed)**
 ```  
-flutter pub run intl_utils:generate
+flutter pub run flutter_launcher_icons:main REM genetate launcher icons
+```  
+
+```  
+flutter pub run intl_utils:generate REM generate localizations if needed
 ```  
 
 #### Usage 
