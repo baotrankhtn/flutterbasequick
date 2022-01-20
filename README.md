@@ -1,7 +1,7 @@
 
 
-# [Setup]
-## 1. Add dependency
+# Setup
+## 1. Add base project dependency
 ```
 dependencies:
   flutter:
@@ -20,14 +20,9 @@ flutter packages upgrade
 ```
 
 ## 2. Project structure
-### 2.1. Resources: Images/icons, fonts, localization
-
-```  
-mkdir assets; mkdir assets/fonts; mkdir assets/images; mkdir assets/images/2.0x; mkdir assets/images/3.0x;  mkdir assets/launchers
-```
+### 2.1. Resources: images/icons, launcher icons, fonts, localization, colors, dimens
 *ic_* prefix for icons, *img_* prefix for images
-
-Sample *pubspec.yaml*
+#### Sample *pubspec.yaml*
 
 ```
 dependencies:
@@ -53,7 +48,7 @@ dev_dependencies:
 
 flutter_intl:
   enabled: true
-  output_dir: lib/generated/localization
+  output_dir: lib/gen/localization
 
 flutter_icons:
   android: true
@@ -63,10 +58,13 @@ flutter_icons:
   adaptive_icon_foreground: "assets/launchers/ic_launcher_android_foreground.png"
 
 flutter_gen:
-  output: lib/generated/assets
+  output: lib/gen/assets
   null_safety: true
   integrations:
     flutter_svg: true
+  colors:
+    inputs:
+      - assets/colors/colors.xml
 
 flutter:
   uses-material-design: true
@@ -85,10 +83,30 @@ flutter:
           weight: 300
         - asset: "assets/fonts/Montserrat-Regular.ttf"
           weight: 400
-        - asset: "assets/fonts/Montserrat-Medium.ttf"
-          weight: 500
 ```
 
+#### Create directories
+```  
+mkdir -p assets assets/fonts assets/images assets/images/2.0x assets/images/3.0x assets/launchers assets/colors assets/dimens
+```
+
+#### Create sample files: colors, dimens
+```
+touch assets/colors/colors.xml; echo "<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="xyz">#979797</color>
+    <color name="xyz_material" type="material">#CF2A2A</color>
+</resources>" >> assets/colors/colors.xml
+```
+
+```
+touch assets/dimens/dimens.dart; echo "class AppDimen {
+  AppDimen._();
+  static const double xyz = 16.0;
+}" >> assets/dimens/dimens.dart
+```
+
+#### Generation
 Generate **images, icons, fonts,...**
 ```  
 flutter pub run build_runner build --delete-conflicting-outputs  
@@ -104,6 +122,15 @@ Generate **localizations (if needed)**
 flutter pub run intl_utils:generate
 ```  
 
+#### Usage 
+```
+Assets.images.icXYZ.image()
+Assets.images.icXYZ.path
+
+FontFamily.XYZ
+
+ColorName.XYZ
+```
 
 ###
 
