@@ -1,5 +1,4 @@
- #!/bin/bash
-
+#!/bin/bash
 
 # Defined command colors
 red=`tput setaf 1`
@@ -9,7 +8,7 @@ reset=`tput sgr0`
 function throw()
 {
 	echo "${red}Error!${reset}"
-    exit $1
+  exit $1
 }
 
 echo "${green}Creating project...${reset}"
