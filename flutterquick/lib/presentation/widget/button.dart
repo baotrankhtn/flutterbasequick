@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterquick/common/values/font_sizes.dart';
 
-import 'base_text.dart';
+import 'text.dart';
 
 /*
  * Created on Wed Jan 19 2022 by baotran

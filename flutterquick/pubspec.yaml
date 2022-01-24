@@ -41,6 +41,9 @@ dependencies:
   connectivity_plus: ^2.2.0
   http: ^0.13.4
 
+  # Loading view
+  flutter_easyloading: ^3.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
