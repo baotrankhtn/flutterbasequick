@@ -6,10 +6,10 @@ readonly COLOR_GREEN=`tput setaf 2`
 readonly COLOR_RESET=`tput sgr0`
 
 # Define sample files
-readonly XML_COLORS="<?xml version="1.0" encoding="utf-8"?>
+readonly XML_COLORS="<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <resources>
-    <color name="xyz">#979797</color>
-    <color name="xyz_material" type="material">#CF2A2A</color>
+    <color name=\"xyz\">#979797</color>
+    <color name=\"xyz_material\" type=\"material\">#CF2A2A</color>
 </resources>"
 
 readonly DART_DIMENS="class AppDimen {
