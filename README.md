@@ -84,12 +84,25 @@ flutter:
 ```
 
 ## 3. Add core dependencies
+```
+dependencies: 
+  # Bloc
+  flutter_bloc: ^8.0.1
+
+  # Inversion of control
+  get_it: ^7.2.0
+  
+  # Network
+  http: ^0.13.3
+```
 
 ## 4. Autorun
 Run *auto_run.sh* to create sample project files
 ```
 bash path/to/auto_run.sh
 ```
+
+## 5. Initialize base project
 
 # Project structure
 ## 1. Resources
