@@ -1,4 +1,5 @@
-
+# TL;DR
+Just **Setup** section is enough
 
 # Setup
 ## 1. Add base project dependency
@@ -19,34 +20,7 @@ Force update git dependencies
 flutter packages upgrade
 ```
 
-## 2. Project structure
-
-### 2.1. Resources: images/icons, launcher icons, fonts, localization, colors, dimens
-
-*ic_* prefix for icons, *img_* prefix for images
-
-#### Create directories
-```  
-mkdir -p assets assets/fonts assets/images assets/images/2.0x assets/images/3.0x assets/launchers assets/colors assets/dimens
-```
-
-#### Create sample files: colors, dimens
-```
-touch assets/colors/colors.xml; echo "<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="xyz">#979797</color>
-    <color name="xyz_material" type="material">#CF2A2A</color>
-</resources>" >> assets/colors/colors.xml
-```
-
-```
-touch assets/dimens/dimens.dart; echo "class AppDimen {
-  AppDimen._();
-  static const double xyz = 16.0;
-}" >> assets/dimens/dimens.dart
-```
-
-#### Sample *pubspec.yaml*
+## 2. Add resource dependencies
 
 ```
 dependencies:
@@ -109,7 +83,38 @@ flutter:
           weight: 400
 ```
 
-#### Generation
+## 3. Add core dependencies
+
+## 4. Autorun
+Run *auto_run.sh* to create sample project files
+```
+bash path/to/auto_run.sh
+```
+
+# Project structure
+## 1. Resources
+
+images/icons, launcher icons, fonts, localization, colors, dimens
+
+*ic_* prefix for icons, *img_* prefix for images
+
+### Sample files: colors, dimens
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="xyz">#979797</color>
+    <color name="xyz_material" type="material">#CF2A2A</color>
+</resources>
+```
+
+```
+class AppDimen {
+  AppDimen._();
+  static const double xyz = 16.0;
+}
+```
+
+### Generation
 ```  
 flutter pub run build_runner build --delete-conflicting-outputs REM generate images, icons, fonts, colors
 ```  
@@ -122,7 +127,7 @@ flutter pub run flutter_launcher_icons:main REM genetate launcher icons
 flutter pub run intl_utils:generate REM generate localizations if needed
 ```  
 
-#### Usage 
+### Usage 
 ```
 Assets.images.icXYZ.image()
 Assets.images.icXYZ.path
@@ -132,11 +137,11 @@ FontFamily.XYZ
 ColorName.XYZ
 ```
 
-###
+##
 
-### 2.2. Common
+## 2. Common
 ```  
 mkdir lib/common; mkdir lib/common/helpers;  mkdir lib/common/utils; mkdir lib/common/interface; mkdir lib/common/logger; mkdir lib/common/mixins; mkdir lib/configs
 ```
 
-## Add flavors
+# Add flavors
