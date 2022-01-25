@@ -153,8 +153,6 @@ ColorName.XYZ
 ##
 
 ## 2. Common
-```  
-mkdir lib/common; mkdir lib/common/helpers;  mkdir lib/common/utils; mkdir lib/common/interface; mkdir lib/common/logger; mkdir lib/common/mixins; mkdir lib/configs
-```
+Helpers, utils, mixins, logger, interfaces,...
 
 # Add flavors
