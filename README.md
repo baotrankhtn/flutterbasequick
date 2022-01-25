@@ -121,8 +121,8 @@ images/icons, launcher icons, fonts, localization, colors, dimens
 ```
 
 ```
-class AppDimen {
-  AppDimen._();
+class Dimens {
+  Dimens._();
   static const double xyz = 16.0;
 }
 ```
@@ -150,9 +150,107 @@ FontFamily.XYZ
 ColorName.XYZ
 ```
 
-##
-
 ## 2. Common
 Helpers, utils, mixins, logger, interfaces,...
+
+*Helper* postfix for helpers, *Util* postfix for utilitities, *Mixin* postfix for mixins, *Logger* postfix for logger, *I* prefix for interfaces
+
+## 3. Configs
+Constants, flavors (Flutter-scope), routes, service locator (inversion of control),...
+
+Global constants of app defined in constants.dart
+```
+class Constants {
+  Constants._();
+  static const int X_Y_Z = 0;
+}
+
+```
+
+Main flavors for **Flutter-scope** are defined in flavor.dart (flavors for **native-scope** will be discussed later)
+```
+enum Flavor { DEV, PRODUCTION }
+
+class FlavorValues {
+  FlavorValues({
+    required this.appUrl,
+  });
+
+  final String appUrl;
+}
+
+class FlavorConfig {
+  final Flavor flavor;
+  final FlavorValues values;
+  static late FlavorConfig _instance;
+
+  factory FlavorConfig({required Flavor flavor, required FlavorValues values}) {
+    _instance = FlavorConfig._internal(flavor, values);
+    return _instance;
+  }
+
+  FlavorConfig._internal(this.flavor, this.values);
+
+  static FlavorConfig get instance {
+    return _instance;
+  }
+
+  static bool isProduction() => _instance.flavor == Flavor.PRODUCTION;
+
+  static bool isDevelopment() => _instance.flavor == Flavor.DEV;
+}
+```
+
+Route paths in routes.dart
+```
+import 'package:flutter/material.dart';
+
+class RoutePaths {
+  static const String X = "/x";
+}
+
+class Routes {
+  static Route<dynamic>? generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case RoutePaths.X:
+        // List<dynamic> args = settings.arguments as List<dynamic>;
+        // var x1 = args[0] as String?;
+        // var x2 = args[1] as int?;
+        // return MaterialPageRoute(builder: (_) => XPage(), settings: settings);
+      default:
+        return null;
+    }
+  }
+}
+```
+
+Access service locator
+```
+locator.get()
+```
+```
+import 'package:get_it/get_it.dart';
+
+final locator = GetIt.instance;
+
+Future setupServiceLocator() async {
+  // PrefRepository
+  // final sharedPreferences = await SharedPreferences.getInstance();
+  // locator.registerLazySingleton<PrefRepository>(
+  //     () => PrefRepository(sharedPreferences));
+
+  // ApiService
+  // locator.registerLazySingleton<ApiService>(() => ApiService(
+  //     appUrl: FlavorConfig.instance.values.appUrl));
+
+  // AppRepository
+  // locator.registerLazySingleton<AppRepository>(() => AppRepository(
+  //       authService: locator.get(),
+  //       apiService: locator.get(),
+  //       prefRepository: locator.get(),
+  //       mediaService: locator.get(),
+  //     ));
+}
+```
 
 # Add flavors
