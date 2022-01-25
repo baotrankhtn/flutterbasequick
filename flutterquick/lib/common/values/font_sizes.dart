@@ -3,8 +3,8 @@
  * Copyright (c) 2022
  */
 
-class BaseFontSize {
-  BaseFontSize._();
+class FontSize {
+  FontSize._();
 
   static const double SMALL_3 = 6;
   static const double SMALL_2 = 8;

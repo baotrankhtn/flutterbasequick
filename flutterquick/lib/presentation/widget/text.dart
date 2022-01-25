@@ -6,12 +6,12 @@ import 'package:flutterquick/common/values/font_sizes.dart';
  * Copyright (c) 2022
  */
 
-class BaseText extends StatelessWidget {
-  BaseText(this.text,
+class CustomText extends StatelessWidget {
+  CustomText(this.text,
       {this.fontFamily,
       this.fontStyle = FontStyle.normal,
       this.color = Colors.black,
-      this.fontSize = BaseFontSize.MEDIUM,
+      this.fontSize = FontSize.MEDIUM,
       this.padding = const EdgeInsets.all(0),
       this.margin = const EdgeInsets.all(0),
       this.maxLine,

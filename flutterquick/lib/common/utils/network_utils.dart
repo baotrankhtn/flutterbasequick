@@ -5,7 +5,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
  * Copyright (c) 2022
  */
 
-class BaseNetworkUtils {
+class NetworkUtils {
   static Future<bool> isNetworkAvailable() async {
     ConnectivityResult connectivityResult =
         await (Connectivity().checkConnectivity());

@@ -3,7 +3,7 @@
  * Copyright (c) 2022
  */
 
-class BaseValidationUtils {
+class ValidationUtils {
   static bool isEmailValid(String email,
       {String pattern =
           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"}) {

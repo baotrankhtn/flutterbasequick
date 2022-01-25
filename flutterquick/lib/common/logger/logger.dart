@@ -6,7 +6,7 @@ import 'package:flutterquick/configs/flutter_base_quick_configs.dart';
  * Copyright (c) 2022
  */
 
-class BaseLogger {
+class Logger {
   static void error(String message,
       {String tag = "--------------------> ERROR <--------------------"}) {
     if (FlutterBaseQuick.debugMode) {

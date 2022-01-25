@@ -8,23 +8,23 @@ import 'text.dart';
  * Copyright (c) 2022
  */
 
-class BaseBottomSizeStyle {
+class CustomBottomSizeStyle {
   static const WRAP_CONTENT = 0;
   static const MATCH_PARENT = 1;
 }
 
-class BaseButton extends StatelessWidget {
-  BaseButton(this.text,
+class CustomButton extends StatelessWidget {
+  CustomButton(this.text,
       {this.textColor = Colors.white,
       this.textAlignment = TextAlign.center,
-      this.fontSize = BaseFontSize.MEDIUM,
+      this.fontSize = FontSize.MEDIUM,
       this.padding = const EdgeInsets.all(8),
       this.tintColor = Colors.white,
       this.backgroundColor = Colors.black,
       this.borderRadius = 4,
       this.borderWidth = 0,
       this.borderOpacity = 0.3,
-      this.sizeStyle = BaseBottomSizeStyle.WRAP_CONTENT,
+      this.sizeStyle = CustomBottomSizeStyle.WRAP_CONTENT,
       this.fontWeight = FontWeight.w500,
       this.leftIcon,
       this.minWidth = 60.0,
@@ -52,7 +52,7 @@ class BaseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return sizeStyle == BaseBottomSizeStyle.WRAP_CONTENT
+    return sizeStyle == CustomBottomSizeStyle.WRAP_CONTENT
         ? Row(
             children: [_buildChild()],
           )
@@ -84,7 +84,7 @@ class BaseButton extends StatelessWidget {
                       children: [
                         ..._buildLeftIcon(),
                         Flexible(
-                          child: BaseText(
+                          child: CustomText(
                             text,
                             maxLine: maxLine,
                             color: textColor,
@@ -95,7 +95,7 @@ class BaseButton extends StatelessWidget {
                         ),
                       ],
                     )
-                  : BaseText(
+                  : CustomText(
                       text,
                       maxLine: maxLine,
                       color: textColor,
