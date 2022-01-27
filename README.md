@@ -1,6 +1,5 @@
-> Flutter quick base project using BLOC, some common libraries.    
-> Import base project to use base components like widgets, bloc, network, logger,...      
-> auto_run.sh is used to create basic structure for client project.       
+> This is a package used to create basic project using BLOC, some common libraries.    
+> And it provide some common components like widgets, bloc, network, logger,...           
 
 # Setup
 ## 1. Add base project dependency
