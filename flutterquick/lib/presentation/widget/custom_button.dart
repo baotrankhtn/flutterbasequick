@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterquick/common/values/font_sizes.dart';
+import 'package:flutterquick/configs/flutter_base_quick_configs.dart';
 
-import 'text.dart';
+import 'custom_text.dart';
 
 /*
  * Created on Wed Jan 19 2022 by baotran
@@ -15,31 +15,35 @@ class CustomBottomSizeStyle {
 
 class CustomButton extends StatelessWidget {
   CustomButton(this.text,
-      {this.textColor = Colors.white,
+      {this.textColor,
       this.textAlignment = TextAlign.center,
-      this.fontSize = FontSize.MEDIUM,
-      this.padding = const EdgeInsets.all(8),
-      this.tintColor = Colors.white,
-      this.backgroundColor = Colors.black,
+      this.fontSize,
+      this.fontWeight,
+      this.padding,
+      this.backgroundColor,
       this.borderRadius = 4,
       this.borderWidth = 0,
       this.borderOpacity = 0.3,
-      this.sizeStyle = CustomBottomSizeStyle.WRAP_CONTENT,
-      this.fontWeight = FontWeight.w500,
-      this.leftIcon,
-      this.minWidth = 60.0,
       this.borderColor = Colors.grey,
+      this.sizeStyle = CustomBottomSizeStyle.WRAP_CONTENT,
+      this.minWidth = 60.0,
+      this.leftIcon,
       this.maxLine = 1,
-      this.onTap});
+      this.onTap}) {
+    textColor ??= FlutterBaseQuick.buttonTextColor;
+    fontSize ??= FlutterBaseQuick.fontSize;
+    fontWeight ??= FlutterBaseQuick.buttonFontWeight;
+    padding ??= FlutterBaseQuick.buttonPadding;
+    backgroundColor ??= FlutterBaseQuick.buttonBackgroundColor;
+  }
 
   final String text;
-  final Color textColor;
+  Color? textColor;
   final TextAlign textAlignment;
-  final double fontSize;
-  final FontWeight fontWeight;
-  final EdgeInsets padding;
-  final Color tintColor;
-  final Color backgroundColor;
+  double? fontSize;
+  FontWeight? fontWeight;
+  EdgeInsets? padding;
+  Color? backgroundColor;
   final double borderRadius;
   final double borderWidth;
   final double borderOpacity;
@@ -89,7 +93,7 @@ class CustomButton extends StatelessWidget {
                             maxLine: maxLine,
                             color: textColor,
                             fontSize: fontSize,
-                            fontWeight: fontWeight,
+                            fontWeight: fontWeight ?? FontWeight.normal,
                             align: textAlignment,
                           ),
                         ),
@@ -100,7 +104,7 @@ class CustomButton extends StatelessWidget {
                       maxLine: maxLine,
                       color: textColor,
                       fontSize: fontSize,
-                      fontWeight: fontWeight,
+                      fontWeight: fontWeight ?? FontWeight.normal,
                       align: textAlignment,
                     ),
             ),

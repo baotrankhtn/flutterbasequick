@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterquick/common/values/font_sizes.dart';
+import 'package:flutterquick/configs/flutter_base_quick_configs.dart';
 
 /*
  * Created on Wed Jan 19 2022 by baotran
@@ -10,21 +10,25 @@ class CustomText extends StatelessWidget {
   CustomText(this.text,
       {this.fontFamily,
       this.fontStyle = FontStyle.normal,
-      this.color = Colors.black,
-      this.fontSize = FontSize.MEDIUM,
+      this.color,
+      this.fontSize,
       this.padding = const EdgeInsets.all(0),
       this.margin = const EdgeInsets.all(0),
       this.maxLine,
       this.overflow = TextOverflow.ellipsis,
       this.align = TextAlign.start,
       this.fontWeight = FontWeight.normal,
-      this.textDecoration = TextDecoration.none});
+      this.textDecoration = TextDecoration.none}) {
+    fontFamily ??= FlutterBaseQuick.fontFamily;
+    color ??= FlutterBaseQuick.textColor;
+    fontSize ??= FlutterBaseQuick.fontSize;
+  }
 
   final String text;
-  final String? fontFamily;
-  final FontStyle fontStyle;
-  final Color color;
-  final double fontSize;
+  String? fontFamily;
+  final FontStyle? fontStyle;
+  Color? color;
+  double? fontSize;
   final EdgeInsets padding;
   final EdgeInsets margin;
   final int? maxLine;
