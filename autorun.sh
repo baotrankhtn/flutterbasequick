@@ -22,7 +22,7 @@ readonly XML_COLORS="<?xml version=\"1.0\" encoding=\"utf-8\"?>
 
 echo "${COLOR_GREEN}Resouces${COLOR_RESET}"
 echo "Create directories"
-mkdir -p assets assets/fonts assets/images assets/images/2.0x assets/images/3.0x assets/launchers assets/colors assets/dimens || throw
+mkdir -p assets assets/fonts assets/images assets/images/2.0x assets/images/3.0x assets/launchers assets/colors || throw
 
 echo "Create sample files"
 touch assets/colors/colors.xml; echo "$XML_COLORS" > assets/colors/colors.xml || throw
