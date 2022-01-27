@@ -1,5 +1,6 @@
-# TL;DR
-Just **Setup** section is enough
+> Flutter quick base project using BLOC, some common libraries.    
+> Import base project to use base components like widgets, bloc, network, logger,...      
+> auto_run.sh is used to create basic structure for client project.       
 
 # Setup
 ## 1. Add base project dependency
@@ -105,6 +106,30 @@ bash path/to/auto_run.sh
 ## 5. Initialize base project
 
 # Project structure
+```
+- assets/
+  |- colors/
+  |- dimens/
+  |- fonts/
+  |- images/
+  |- launchers/
+- lib/
+  |- bloc/
+  |- comnmon/
+     |- helpers/
+     |- interfaces/
+     |- mixins/
+     |- utils/
+  |- configs/
+  |- data/
+  |- presentation/
+     |- dialogs/
+     |- pages/
+     |- widgets/
+  |- app.dart
+  |- main-prod.dart
+  |- main.dart
+```
 ## 1. Resources
 
 images/icons, launcher icons, fonts, localization, colors, dimens
@@ -254,3 +279,6 @@ Future setupServiceLocator() async {
 ```
 
 # Add flavors
+
+
+> Copyright (c) baotran
