@@ -20,23 +20,43 @@ readonly XML_COLORS="<?xml version=\"1.0\" encoding=\"utf-8\"?>
     <color name=\"xyz_material\" type=\"material\">#CF2A2A</color>
 </resources>"
 
+echo "${COLOR_GREEN}Resouces${COLOR_RESET}"
+echo "Create directories"
+mkdir -p assets assets/fonts assets/images assets/images/2.0x assets/images/3.0x assets/launchers assets/colors assets/dimens || throw
+
+echo "Create sample files"
+touch assets/colors/colors.xml; echo "$XML_COLORS" > assets/colors/colors.xml || throw
+
+# Common
 readonly DART_DIMENS="class Dimens {
   Dimens._();
   static const double X_Y_Z = 16.0;
 }"
 
-echo "${COLOR_GREEN}Resouces${COLOR_RESET}"
-echo "Create directories"
-mkdir -p assets assets/fonts assets/images assets/images/2.0x assets/images/3.0x assets/launchers assets/colors assets/dimens || throw
+readonly DART_FONT_SIZES="class FontSize {
+  FontSize._();
 
-echo "Create sample files: colors, dimens"
-touch assets/colors/colors.xml; echo "$XML_COLORS" > assets/colors/colors.xml || throw
-touch assets/dimens/dimens.dart; echo "$DART_DIMENS" > assets/dimens/dimens.dart || throw
+  static const double SMALL_3 = 6;
+  static const double SMALL_2 = 8;
+  static const double SMALL_1 = 10;
+  static const double SMALL = 12;
+  static const double MEDIUM = 14;
+  static const double BIG = 16;
+  static const double BIG_1 = 18;
+  static const double BIG_2 = 20;
+  static const double BIG_3 = 22;
+  static const double BIG_4 = 24;
+  static const double BIG_5 = 26;
+  static const double BIG_6 = 28;
+}"
 
-# Common
 echo "${COLOR_GREEN}Common${COLOR_RESET}"
 echo "Create directories"
-mkdir -p lib/common lib/common/helpers lib/common/utils lib/common/interfaces lib/common/mixins || throw
+mkdir -p lib/common lib/common/helpers lib/common/utils lib/common/interfaces lib/common/mixins lib/common/values || throw
+
+echo "Create sample files"
+touch lib/common/values/dimens.dart; echo "$DART_DIMENS" > lib/common/values/dimens.dart || throw
+touch lib/common/values/font_sizes.dart; echo "$DART_FONT_SIZES" > lib/common/values/font_sizes.dart || throw
 
 # Configs
 readonly DART_CONSTANTS="class Constants {
