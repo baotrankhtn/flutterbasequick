@@ -1,5 +1,5 @@
 > This is a package used to create basic project using BLOC, some common libraries.    
-> And it provide some common components like widgets, bloc, network, logger,...           
+> And it provides some common components like text, button, bloc, network, logger,...           
 
 # Setup
 ## 1. Add base project dependency
@@ -106,28 +106,28 @@ bash path/to/auto_run.sh
 
 # Project structure
 ```
-- assets/
+- assets/ -> Resouces 
   |- colors/
   |- dimens/
   |- fonts/
   |- images/
   |- launchers/
 - lib/
-  |- bloc/
+  |- bloc/ 
   |- comnmon/
      |- helpers/
      |- interfaces/
      |- mixins/
      |- utils/
-  |- configs/
-  |- data/
+  |- configs/ -> Important configs 
+  |- data/ -> Models, repositories
   |- presentation/
      |- dialogs/
      |- pages/
      |- widgets/
-  |- app.dart
-  |- main-prod.dart
-  |- main.dart
+  |- app.dart -> Base app widget configs
+  |- main-prod.dart -> App entry for production mode
+  |- main.dart -> App entry for development mode
 ```
 ## 1. Resources
 
