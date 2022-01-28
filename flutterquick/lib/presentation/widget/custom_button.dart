@@ -82,9 +82,8 @@ class CustomButton extends StatelessWidget {
                     borderColor ?? Colors.black.withOpacity(borderOpacity ?? 1),
                 width: borderWidth ?? 0)),
         child: InkWell(
-          borderRadius: BorderRadius.circular((borderRadius ?? 2 - 2) < 0
-              ? 0
-              : borderRadius ?? 2 - 2), // Prevent ripple overflow
+          borderRadius: BorderRadius.circular(
+              borderRadius ?? 0), // Prevent ripple overflow
           child: Container(
             padding: padding,
             alignment: Alignment.center,
