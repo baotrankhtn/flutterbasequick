@@ -18,7 +18,7 @@ class FlutterBaseQuick {
 
   FlutterBaseQuick._();
 
-  void initialize(
+  static void initialize(
       {required bool dMode,
       // Text
       String? textFontFamily,
