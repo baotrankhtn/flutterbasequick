@@ -97,7 +97,7 @@ dependencies:
 ```
 
 ## 4. Autorun
-Run *auto_run.sh* to create sample project files
+Run *autorun.sh* to create sample project files
 ```
 bash <(curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/baotrankhtn/flutterbasequick/develop/autorun.sh)
 ```
