@@ -28,6 +28,9 @@ class FlutterBaseQuick {
     required bool dMode,
   }) {
     FlutterBaseQuick.debugMode = dMode;
+
+    initizalizeText();
+    initializeButton();
   }
 
   static void initizalizeText({
