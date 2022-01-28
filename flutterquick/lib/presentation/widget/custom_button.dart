@@ -22,10 +22,10 @@ class CustomButton extends StatelessWidget {
       this.fontWeight,
       this.padding,
       this.backgroundColor,
-      this.borderRadius = 4,
-      this.borderWidth = 0,
-      this.borderOpacity = 0.3,
-      this.borderColor = Colors.grey,
+      this.borderRadius,
+      this.borderWidth,
+      this.borderOpacity,
+      this.borderColor,
       this.sizeStyle = CustomBottomSizeStyle.WRAP_CONTENT,
       this.minWidth = 60.0,
       this.leftIcon,
@@ -37,6 +37,10 @@ class CustomButton extends StatelessWidget {
     fontWeight ??= FlutterBaseQuick.buttonTextFontWeight;
     padding ??= FlutterBaseQuick.buttonPadding;
     backgroundColor ??= FlutterBaseQuick.buttonBackgroundColor;
+    borderRadius ??= FlutterBaseQuick.buttonBorderRadius;
+    borderWidth ??= FlutterBaseQuick.buttonBorderWidth;
+    borderOpacity ??= FlutterBaseQuick.buttonBorderOpacity;
+    borderColor ??= FlutterBaseQuick.buttonBorderColor;
   }
 
   final String text;
@@ -47,10 +51,10 @@ class CustomButton extends StatelessWidget {
   FontWeight? fontWeight;
   EdgeInsets? padding;
   Color? backgroundColor;
-  final double borderRadius;
-  final double borderWidth;
-  final double borderOpacity;
-  final Color borderColor;
+  double? borderRadius;
+  double? borderWidth;
+  double? borderOpacity;
+  Color? borderColor;
   final int sizeStyle;
   final double minWidth;
   final Widget? leftIcon;
@@ -72,14 +76,15 @@ class CustomButton extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: BorderRadius.circular(borderRadius ?? 0),
             border: Border.all(
-                color: borderColor.withOpacity(borderOpacity),
-                width: borderWidth)),
+                color:
+                    borderColor ?? Colors.black.withOpacity(borderOpacity ?? 1),
+                width: borderWidth ?? 0)),
         child: InkWell(
-          borderRadius: BorderRadius.circular((borderRadius - 2) < 0
+          borderRadius: BorderRadius.circular((borderRadius ?? 2 - 2) < 0
               ? 0
-              : borderRadius - 2), // Prevent ripple overflow
+              : borderRadius ?? 2 - 2), // Prevent ripple overflow
           child: Container(
             padding: padding,
             alignment: Alignment.center,

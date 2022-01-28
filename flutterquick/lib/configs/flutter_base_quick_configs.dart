@@ -18,6 +18,10 @@ class FlutterBaseQuick {
   static late FontWeight? buttonTextFontWeight;
   static late EdgeInsets? buttonPadding;
   static late Color? buttonBackgroundColor;
+  static late double? buttonBorderRadius;
+  static late double? buttonBorderWidth;
+  static late double? buttonBorderOpacity;
+  static late Color? buttonBorderColor;
 
   FlutterBaseQuick._();
 
@@ -49,7 +53,11 @@ class FlutterBaseQuick {
       Color? buttonTextColor = Colors.white,
       EdgeInsets? buttonPadding = const EdgeInsets.all(8),
       FontWeight? buttonTextFontWeight = FontWeight.w500,
-      Color? buttonBackgroundColor = Colors.black}) {
+      Color? buttonBackgroundColor = Colors.black,
+      double? buttonBorderRadius = 4,
+      double? buttonBorderWidth = 0,
+      double? buttonBorderOpacity = 0.3,
+      Color? buttonBorderColor = Colors.black}) {
     FlutterBaseQuick.buttonTextFontFamily = buttonTextFontFamily;
     FlutterBaseQuick.buttonTextFontSize = buttonTextFontSize;
     FlutterBaseQuick.buttonTextColor = buttonTextColor;
@@ -57,5 +65,9 @@ class FlutterBaseQuick {
 
     FlutterBaseQuick.buttonPadding = buttonPadding;
     FlutterBaseQuick.buttonBackgroundColor = buttonBackgroundColor;
+    FlutterBaseQuick.buttonBorderRadius = buttonBorderRadius;
+    FlutterBaseQuick.buttonBorderWidth = buttonBorderWidth;
+    FlutterBaseQuick.buttonBorderOpacity = buttonBorderOpacity;
+    FlutterBaseQuick.buttonBorderColor = buttonBorderColor;
   }
 }
