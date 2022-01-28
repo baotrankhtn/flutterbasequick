@@ -15,7 +15,8 @@ class CustomBottomSizeStyle {
 
 class CustomButton extends StatelessWidget {
   CustomButton(this.text,
-      {this.textColor,
+      {this.fontFamily,
+      this.textColor,
       this.textAlignment = TextAlign.center,
       this.fontSize,
       this.fontWeight,
@@ -30,14 +31,16 @@ class CustomButton extends StatelessWidget {
       this.leftIcon,
       this.maxLine = 1,
       this.onTap}) {
+    fontFamily ??= FlutterBaseQuick.buttonTextFontFamily;
     textColor ??= FlutterBaseQuick.buttonTextColor;
     fontSize ??= FlutterBaseQuick.buttonTextFontSize;
-    fontWeight ??= FlutterBaseQuick.buttonFontWeight;
+    fontWeight ??= FlutterBaseQuick.buttonTextFontWeight;
     padding ??= FlutterBaseQuick.buttonPadding;
     backgroundColor ??= FlutterBaseQuick.buttonBackgroundColor;
   }
 
   final String text;
+  String? fontFamily;
   Color? textColor;
   final TextAlign textAlignment;
   double? fontSize;
@@ -90,6 +93,7 @@ class CustomButton extends StatelessWidget {
                         Flexible(
                           child: CustomText(
                             text,
+                            fontFamily: fontFamily,
                             maxLine: maxLine,
                             color: textColor,
                             fontSize: fontSize,
@@ -101,6 +105,7 @@ class CustomButton extends StatelessWidget {
                     )
                   : CustomText(
                       text,
+                      fontFamily: fontFamily,
                       maxLine: maxLine,
                       color: textColor,
                       fontSize: fontSize,
