@@ -19,9 +19,9 @@ class CustomText extends StatelessWidget {
       this.align = TextAlign.start,
       this.fontWeight = FontWeight.normal,
       this.textDecoration = TextDecoration.none}) {
-    fontFamily ??= FlutterBaseQuick.fontFamily;
+    fontFamily ??= FlutterBaseQuick.textFontFamily;
     color ??= FlutterBaseQuick.textColor;
-    fontSize ??= FlutterBaseQuick.fontSize;
+    fontSize ??= FlutterBaseQuick.textFontSize;
   }
 
   final String text;

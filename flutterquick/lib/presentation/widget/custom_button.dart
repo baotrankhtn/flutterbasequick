@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
       this.maxLine = 1,
       this.onTap}) {
     textColor ??= FlutterBaseQuick.buttonTextColor;
-    fontSize ??= FlutterBaseQuick.fontSize;
+    fontSize ??= FlutterBaseQuick.buttonTextFontSize;
     fontWeight ??= FlutterBaseQuick.buttonFontWeight;
     padding ??= FlutterBaseQuick.buttonPadding;
     backgroundColor ??= FlutterBaseQuick.buttonBackgroundColor;

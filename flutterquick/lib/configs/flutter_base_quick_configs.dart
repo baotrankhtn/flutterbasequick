@@ -7,9 +7,10 @@ import 'package:flutter/material.dart';
 
 class FlutterBaseQuick {
   static late bool debugMode;
-  static late String? fontFamily;
-  static late double? fontSize;
+  static late String? textFontFamily;
+  static late double? textFontSize;
   static late Color? textColor;
+  static late double? buttonTextFontSize;
   static late Color? buttonTextColor;
   static late EdgeInsets? buttonPadding;
   static late FontWeight? buttonFontWeight;
@@ -19,21 +20,26 @@ class FlutterBaseQuick {
 
   void initialize(
       {required bool dMode,
-      String? fontFamily,
+      // Text
+      String? textFontFamily,
       Color? textColor = Colors.black,
-      double? fontSize = 14,
+      double? textFontSize = 14,
+      // Button
+      double? buttonTextFontSize = 14,
       Color? buttonTextColor = Colors.white,
       EdgeInsets? buttonPadding = const EdgeInsets.all(8),
       FontWeight? buttonFontWeight = FontWeight.w500,
       Color? buttonBackgroundColor = Colors.black}) {
+    // Mode
     FlutterBaseQuick.debugMode = dMode;
 
-    // Both text & button
-    FlutterBaseQuick.fontFamily = fontFamily;
+    // Text
+    FlutterBaseQuick.textFontFamily = textFontFamily;
     FlutterBaseQuick.textColor = textColor;
-    FlutterBaseQuick.fontSize = fontSize;
+    FlutterBaseQuick.textFontSize = textFontSize;
 
-    // Button only
+    // Button
+    FlutterBaseQuick.buttonTextFontSize = buttonTextFontSize;
     FlutterBaseQuick.buttonTextColor = buttonTextColor;
     FlutterBaseQuick.buttonPadding = buttonPadding;
     FlutterBaseQuick.buttonFontWeight = buttonFontWeight;
