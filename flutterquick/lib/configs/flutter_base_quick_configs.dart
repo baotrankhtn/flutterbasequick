@@ -50,6 +50,7 @@ class FlutterBaseQuick {
       EdgeInsets? buttonPadding = const EdgeInsets.all(8),
       FontWeight? buttonTextFontWeight = FontWeight.w500,
       Color? buttonBackgroundColor = Colors.black}) {
+    FlutterBaseQuick.buttonTextFontFamily = buttonTextFontFamily;
     FlutterBaseQuick.buttonTextFontSize = buttonTextFontSize;
     FlutterBaseQuick.buttonTextColor = buttonTextColor;
     FlutterBaseQuick.buttonTextFontWeight = buttonTextFontWeight;
