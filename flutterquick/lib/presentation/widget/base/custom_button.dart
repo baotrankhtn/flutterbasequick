@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterquick/configs/flutter_base_quick_configs.dart';
+import '/common/values/font_sizes.dart';
 
 import 'custom_text.dart';
-
-/*
- * Created on Wed Jan 19 2022 by baotran
- * Copyright (c) 2022
- */
 
 class CustomBottomSizeStyle {
   static const WRAP_CONTENT = 0;
@@ -15,46 +10,35 @@ class CustomBottomSizeStyle {
 
 class CustomButton extends StatelessWidget {
   CustomButton(this.text,
-      {this.fontFamily,
-      this.textColor,
+      {this.textColor = Colors.black,
       this.textAlignment = TextAlign.center,
-      this.fontSize,
-      this.fontWeight,
-      this.padding,
-      this.backgroundColor,
-      this.borderRadius,
-      this.borderWidth,
-      this.borderOpacity,
-      this.borderColor,
+      this.fontSize = FontSize.MEDIUM,
+      this.padding = const EdgeInsets.all(8),
+      this.tintColor = Colors.white,
+      this.backgroundColor = Colors.black,
+      this.borderRadius = 4,
+      this.borderWidth = 0,
+      this.borderOpacity = 0.3,
       this.sizeStyle = CustomBottomSizeStyle.WRAP_CONTENT,
-      this.minWidth = 60.0,
+      this.fontWeight = FontWeight.w500,
       this.leftIcon,
+      this.minWidth = 60.0,
+      this.borderColor = Colors.grey,
       this.maxLine = 1,
-      this.onTap}) {
-    fontFamily ??= FlutterBaseQuick.buttonTextFontFamily;
-    textColor ??= FlutterBaseQuick.buttonTextColor;
-    fontSize ??= FlutterBaseQuick.buttonTextFontSize;
-    fontWeight ??= FlutterBaseQuick.buttonTextFontWeight;
-    padding ??= FlutterBaseQuick.buttonPadding;
-    backgroundColor ??= FlutterBaseQuick.buttonBackgroundColor;
-    borderRadius ??= FlutterBaseQuick.buttonBorderRadius;
-    borderWidth ??= FlutterBaseQuick.buttonBorderWidth;
-    borderOpacity ??= FlutterBaseQuick.buttonBorderOpacity;
-    borderColor ??= FlutterBaseQuick.buttonBorderColor;
-  }
+      this.onTap});
 
   final String text;
-  String? fontFamily;
-  Color? textColor;
+  final Color textColor;
   final TextAlign textAlignment;
-  double? fontSize;
-  FontWeight? fontWeight;
-  EdgeInsets? padding;
-  Color? backgroundColor;
-  double? borderRadius;
-  double? borderWidth;
-  double? borderOpacity;
-  Color? borderColor;
+  final double fontSize;
+  final FontWeight fontWeight;
+  final EdgeInsets padding;
+  final Color tintColor;
+  final Color backgroundColor;
+  final double borderRadius;
+  final double borderWidth;
+  final double borderOpacity;
+  final Color borderColor;
   final int sizeStyle;
   final double minWidth;
   final Widget? leftIcon;
@@ -76,14 +60,14 @@ class CustomButton extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: BorderRadius.circular(borderRadius ?? 0),
+            borderRadius: BorderRadius.circular(borderRadius),
             border: Border.all(
-                color:
-                    borderColor ?? Colors.black.withOpacity(borderOpacity ?? 1),
-                width: borderWidth ?? 0)),
+                color: borderColor.withOpacity(borderOpacity),
+                width: borderWidth)),
         child: InkWell(
-          borderRadius: BorderRadius.circular(
-              borderRadius ?? 0), // Prevent ripple overflow
+          borderRadius: BorderRadius.circular((borderRadius - 2) < 0
+              ? 0
+              : borderRadius - 2), // Prevent ripple overflow
           child: Container(
             padding: padding,
             alignment: Alignment.center,
@@ -97,11 +81,10 @@ class CustomButton extends StatelessWidget {
                         Flexible(
                           child: CustomText(
                             text,
-                            fontFamily: fontFamily,
                             maxLine: maxLine,
                             color: textColor,
                             fontSize: fontSize,
-                            fontWeight: fontWeight ?? FontWeight.normal,
+                            fontWeight: fontWeight,
                             align: textAlignment,
                           ),
                         ),
@@ -109,11 +92,10 @@ class CustomButton extends StatelessWidget {
                     )
                   : CustomText(
                       text,
-                      fontFamily: fontFamily,
                       maxLine: maxLine,
                       color: textColor,
                       fontSize: fontSize,
-                      fontWeight: fontWeight ?? FontWeight.normal,
+                      fontWeight: fontWeight,
                       align: textAlignment,
                     ),
             ),
@@ -130,7 +112,7 @@ class CustomButton extends StatelessWidget {
         width: 24.0,
         child: leftIcon,
       ),
-      const SizedBox(width: 12.0),
+      SizedBox(width: 12.0),
     ];
   }
 }

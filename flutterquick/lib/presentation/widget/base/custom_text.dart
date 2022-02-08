@@ -1,34 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutterquick/configs/flutter_base_quick_configs.dart';
-
-/*
- * Created on Wed Jan 19 2022 by baotran
- * Copyright (c) 2022
- */
+import '/gen/assets/fonts.gen.dart';
+import '/common/values/font_sizes.dart';
 
 class CustomText extends StatelessWidget {
   CustomText(this.text,
-      {this.fontFamily,
+      {this.fontFamily = FontFamily.sfpro,
       this.fontStyle = FontStyle.normal,
-      this.color,
-      this.fontSize,
+      this.color = Colors.black,
+      this.fontSize = FontSize.MEDIUM,
       this.padding = const EdgeInsets.all(0),
       this.margin = const EdgeInsets.all(0),
       this.maxLine,
       this.overflow = TextOverflow.ellipsis,
       this.align = TextAlign.start,
       this.fontWeight = FontWeight.normal,
-      this.textDecoration = TextDecoration.none}) {
-    fontFamily ??= FlutterBaseQuick.textFontFamily;
-    color ??= FlutterBaseQuick.textColor;
-    fontSize ??= FlutterBaseQuick.textFontSize;
-  }
+      this.textDecoration = TextDecoration.none});
 
   final String text;
-  String? fontFamily;
-  final FontStyle? fontStyle;
-  Color? color;
-  double? fontSize;
+  final String fontFamily;
+  final FontStyle fontStyle;
+  final Color color;
+  final double fontSize;
   final EdgeInsets padding;
   final EdgeInsets margin;
   final int? maxLine;

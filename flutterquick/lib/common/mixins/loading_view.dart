@@ -17,17 +17,15 @@ mixin LoadingViewMixin {
 
   void showError(String message) {
     _isShowingInfo = true;
-    EasyLoading.showError(message)
-      ..whenComplete(() {
-        _isShowingInfo = false;
-      });
+    EasyLoading.showError(message).whenComplete(() {
+      _isShowingInfo = false;
+    });
   }
 
   void showSuccess(String message) {
     _isShowingInfo = true;
-    EasyLoading.showSuccess(message)
-      ..whenComplete(() {
-        _isShowingInfo = false;
-      });
+    EasyLoading.showSuccess(message).whenComplete(() {
+      _isShowingInfo = false;
+    });
   }
 }

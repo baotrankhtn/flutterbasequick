@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:flutterquick/configs/flutter_base_quick_configs.dart';
+import 'package:flutter/foundation.dart';
 
 /*
  * Created on Mon Jan 24 2022 by baotran
@@ -9,14 +9,14 @@ import 'package:flutterquick/configs/flutter_base_quick_configs.dart';
 class Logger {
   static void error(String message,
       {String tag = "--------------------> ERROR <--------------------"}) {
-    if (FlutterBaseQuick.debugMode) {
+    if (kDebugMode) {
       log(tag + "\n" + message);
     }
   }
 
   static void info(String message,
       {String tag = "--------------------> INFO <--------------------"}) {
-    if (FlutterBaseQuick.debugMode) {
+    if (kDebugMode) {
       log(tag + "\n" + message);
     }
   }

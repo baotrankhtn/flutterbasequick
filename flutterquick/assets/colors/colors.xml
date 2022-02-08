@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TODO: Remove this demo -->
+    <color name="xyz">#979797</color>
+    <color name="xyz_material" type="material">#CF2A2A</color>
+</resources>

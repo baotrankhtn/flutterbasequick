@@ -30,12 +30,17 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Localization
+  flutter_localizations: 
+    sdk: flutter
+  intl: ^0.17.0
+  intl_utils: ^2.6.1 
+
   # Bloc
   flutter_bloc: ^8.0.1
 
-  # Localization
-  intl: ^0.17.0
-  intl_utils: ^2.4.0 
+  # Inversion of control
+  get_it: ^7.2.0
 
   # Network
   connectivity_plus: ^2.2.0
@@ -55,6 +60,33 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
+  # Generate launcher icons
+  flutter_launcher_icons: ^0.9.2
+
+  # Generate images, fonts,...
+  build_runner:
+  flutter_gen_runner:
+
+flutter_intl:
+  enabled: true
+  output_dir: lib/gen/localization
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/launchers/ic_launcher.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/launchers/ic_launcher_android_foreground.png"
+
+flutter_gen:
+  output: lib/gen/assets
+  null_safety: true
+  integrations:
+    flutter_svg: true
+  colors:
+    inputs:
+      - assets/colors/colors.xml
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -70,6 +102,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -96,3 +130,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: sfpro
+      fonts:
+        - asset: "assets/fonts/sf_pro_display_bold.otf"
+          weight: 600
+        - asset: "assets/fonts/sf_pro_display_medium.otf"
+          weight: 500
+        - asset: "assets/fonts/sf_pro_display_regular.otf"
+          weight: 400 # FontWeight.normal = w400
