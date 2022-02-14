@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbasequick/gen/localization/l10n.dart';
 import '/common/values/font_sizes.dart';
 import '/presentation/widget/base/custom_button.dart';
 import '/presentation/widget/base/custom_text.dart';
@@ -24,7 +25,7 @@ class InfoDialog extends BaseDialog {
 
   void _init() {
     if (positiveText.isEmpty) {
-      // positiveText = S.current.ok;
+      positiveText = S.current.ok;
     }
   }
 
