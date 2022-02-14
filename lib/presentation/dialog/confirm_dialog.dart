@@ -24,7 +24,17 @@ class ConfirmDialog extends BaseDialog {
       this.callbackPositive,
       this.callbackNegative})
       : super(context: context) {
+    _init();
     _build();
+  }
+
+  void _init() {
+    if (positiveText.isEmpty) {
+      // positiveText = S.current.ok;
+    }
+    if (negativeText.isEmpty) {
+      // negativeText = S.current.cancel;
+    }
   }
 
   void _build() {

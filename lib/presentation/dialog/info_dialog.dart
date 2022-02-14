@@ -18,7 +18,14 @@ class InfoDialog extends BaseDialog {
       this.positiveText = "",
       this.callbackPositive})
       : super(context: context) {
+    _init();
     _build();
+  }
+
+  void _init() {
+    if (positiveText.isEmpty) {
+      // positiveText = S.current.ok;
+    }
   }
 
   void _build() {
