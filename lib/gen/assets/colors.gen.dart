@@ -11,8 +11,11 @@ import 'package:flutter/material.dart';
 class ColorName {
   ColorName._();
 
+  /// Color: #FFFFFF
+  static const Color background = Color(0xFFFFFFFF);
+
   /// Color: #979797
-  static const Color xyz = Color(0xFF979797);
+  static const Color primary = Color(0xFF979797);
 
   /// MaterialColor:
   ///   50: #FFF9E5E5
@@ -25,7 +28,7 @@ class ColorName {
   ///   700: #FFC31F1F
   ///   800: #FFBD1919
   ///   900: #FFB20F0F
-  static const MaterialColor xyzMaterial = MaterialColor(
+  static const MaterialColor primaryMaterial = MaterialColor(
     0xFFCF2A2A,
     <int, Color>{
       50: Color(0xFFF9E5E5),

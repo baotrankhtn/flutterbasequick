@@ -1,14 +1,14 @@
+import 'package:flutterbasequick/data/local/pref_repository.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final locator = GetIt.instance;
 
 Future setupServiceLocator() async {
-  // TODO: Remove this demo
-
   // PrefRepository
-  // final sharedPreferences = await SharedPreferences.getInstance();
-  // locator.registerLazySingleton<PrefRepository>(
-  //     () => PrefRepository(sharedPreferences));
+  final sharedPreferences = await SharedPreferences.getInstance();
+  locator.registerLazySingleton<PrefRepository>(
+      () => PrefRepository(sharedPreferences));
 
   // ApiService
   // locator.registerLazySingleton<ApiService>(() => ApiService(

@@ -4,10 +4,11 @@ import 'configs/flavors.dart';
 void main() async {
   // Set global flavor
   FlavorConfig(
-      flavor: Flavor.DEV,
+      flavor: Flavor.PRODUCTION,
       values: FlavorValues(
-        appUrl: "https://dev-demo-api.com",
+        appUrl: "https://pro-demo-api.com",
       ));
+
   // Start app
   return MyApp.appRunner();
 }
