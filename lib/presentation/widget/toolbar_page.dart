@@ -26,7 +26,7 @@ class ToolbarPage extends StatelessWidget {
       this.showLeftButton = true,
       this.leftButtonColor = Colors.black,
       this.leading,
-      this.titleFontWeight = FontWeight.normal,
+      this.titleFontWeight = FontWeight.w600,
       this.statusBarIconBrightness = Brightness.dark,
       this.onLeftButtonListener});
 
@@ -63,47 +63,45 @@ class ToolbarPage extends StatelessWidget {
               ? Brightness.dark
               : Brightness.light,
           statusBarIconBrightness: statusBarIconBrightness),
-      child: Container(
-        child: Stack(
-          children: [
-            // Top and bottom of SafeArea
-            Column(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: Container(
-                        decoration: BoxDecoration(color: topAreaColor))),
-                Expanded(
-                    flex: 1,
-                    child: Container(
-                        decoration: BoxDecoration(color: bottomAreaColor)))
-              ],
-            ),
+      child: Stack(
+        children: [
+          // Top and bottom of SafeArea
+          Column(
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                      decoration: BoxDecoration(color: topAreaColor))),
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                      decoration: BoxDecoration(color: bottomAreaColor)))
+            ],
+          ),
 
-            // Main content
-            SafeArea(
-              left: safeAreaLeft,
-              right: safeAreaRight,
-              top: safeAreaTop,
-              bottom: safeAreaBottom,
-              child: Scaffold(
-                backgroundColor: safeAreaColor,
-                body: Container(
-                    decoration: BoxDecoration(color: safeAreaColor),
-                    child: extendBodyBehindToolbar
-                        ? Stack(
-                            children: [child, _buildToolbar(context)],
-                          )
-                        : Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                                _buildToolbar(context),
-                                Expanded(child: child),
-                              ])),
-              ),
+          // Main content
+          SafeArea(
+            left: safeAreaLeft,
+            right: safeAreaRight,
+            top: safeAreaTop,
+            bottom: safeAreaBottom,
+            child: Scaffold(
+              backgroundColor: safeAreaColor,
+              body: Container(
+                  decoration: BoxDecoration(color: safeAreaColor),
+                  child: extendBodyBehindToolbar
+                      ? Stack(
+                          children: [child, _buildToolbar(context)],
+                        )
+                      : Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                              _buildToolbar(context),
+                              Expanded(child: child),
+                            ])),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -114,6 +114,6 @@ class MyApp extends StatelessWidget {
   }
 
   Widget _getInitialScreen() {
-    return HomePage();
+    return const HomePage();
   }
 }

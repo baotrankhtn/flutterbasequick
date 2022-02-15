@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbasequick/common/values/dimens.dart';
 import 'package:flutterbasequick/gen/localization/l10n.dart';
 import '/common/values/font_sizes.dart';
 import '/presentation/widget/base/custom_button.dart';
@@ -31,11 +32,13 @@ class InfoDialog extends BaseDialog {
 
   void _build() {
     dialog = AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(Dimens.radiusNormal)),
       contentPadding: EdgeInsets.zero,
       content: Container(
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(16)),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(Dimens.radiusNormal)),
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -64,10 +67,8 @@ class InfoDialog extends BaseDialog {
             // Button
             CustomButton(
               positiveText,
-              padding: const EdgeInsets.all(16),
               fontSize: FontSize.MEDIUM,
               fontWeight: FontWeight.w500,
-              borderRadius: 8,
               sizeStyle: CustomBottomSizeStyle.MATCH_PARENT,
               onTap: () {
                 dismiss();

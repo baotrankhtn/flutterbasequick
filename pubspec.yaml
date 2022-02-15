@@ -137,8 +137,8 @@ flutter:
     - family: sfpro
       fonts:
         - asset: "assets/fonts/sf_pro_display_bold.otf"
-          weight: 600
+          weight: 800
         - asset: "assets/fonts/sf_pro_display_medium.otf"
-          weight: 500
+          weight: 600
         - asset: "assets/fonts/sf_pro_display_regular.otf"
           weight: 400 # FontWeight.normal = w400

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbasequick/common/values/dimens.dart';
 import '/common/values/font_sizes.dart';
 
 import 'custom_text.dart';
@@ -10,13 +11,13 @@ class CustomBottomSizeStyle {
 
 class CustomButton extends StatelessWidget {
   CustomButton(this.text,
-      {this.textColor = Colors.black,
+      {this.textColor = Colors.white,
       this.textAlignment = TextAlign.center,
       this.fontSize = FontSize.MEDIUM,
-      this.padding = const EdgeInsets.all(8),
+      this.padding = const EdgeInsets.fromLTRB(16, 12, 16, 12),
       this.tintColor = Colors.white,
       this.backgroundColor = Colors.black,
-      this.borderRadius = 4,
+      this.borderRadius = Dimens.radiusNormal,
       this.borderWidth = 0,
       this.borderOpacity = 0.3,
       this.sizeStyle = CustomBottomSizeStyle.WRAP_CONTENT,

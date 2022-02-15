@@ -40,10 +40,8 @@ class ConfirmDialog extends BaseDialog {
 
   void _build() {
     Widget customButtonNegativeText = CustomButton(negativeText,
-        padding: const EdgeInsets.fromLTRB(8, 16, 8, 16),
         fontSize: FontSize.MEDIUM,
         fontWeight: FontWeight.w500,
-        borderRadius: 16,
         backgroundColor: Colors.transparent,
         borderColor: Colors.black,
         borderOpacity: 1,
@@ -55,10 +53,8 @@ class ConfirmDialog extends BaseDialog {
     });
     Widget customButtonPositive = CustomButton(
       positiveText,
-      padding: const EdgeInsets.fromLTRB(8, 16, 8, 16),
       fontSize: FontSize.MEDIUM,
       fontWeight: FontWeight.w500,
-      borderRadius: 16,
       sizeStyle: CustomBottomSizeStyle.MATCH_PARENT,
       onTap: () {
         dismiss();
