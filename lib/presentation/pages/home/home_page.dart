@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterbasequick/presentation/widget/base/custom_button.dart';
-import 'package:flutterbasequick/presentation/widget/toolbar_page.dart';
+import '/configs/routes.dart';
+import '/presentation/widget/base/custom_button.dart';
+import '/presentation/widget/toolbar_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,6 +25,10 @@ class _HomePageState extends State<HomePage> {
             children: [
               CustomButton(
                 "Important! Check this DEMO",
+                onTap: () {
+                  Navigator.pushNamed(context, RoutePaths.DEMO,
+                      arguments: ["Demo"]);
+                },
               ),
             ],
           ),

@@ -20,7 +20,7 @@ class ToolbarPage extends StatelessWidget {
       this.safeAreaBottom = true,
       this.extendBodyBehindToolbar = false,
       this.actionButtons = const [],
-      this.toolbarBackgroundColor = ColorName.background,
+      this.toolbarBackgroundColor = ColorName.primary,
       this.toolbarMargin,
       this.toolbarHeight = Dimens.toolbarHeight,
       this.showLeftButton = true,

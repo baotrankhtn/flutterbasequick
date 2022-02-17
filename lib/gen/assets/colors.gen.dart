@@ -14,33 +14,33 @@ class ColorName {
   /// Color: #FFFFFF
   static const Color background = Color(0xFFFFFFFF);
 
-  /// Color: #979797
-  static const Color primary = Color(0xFF979797);
+  /// Color: #78d119
+  static const Color primary = Color(0xFF78D119);
 
   /// MaterialColor:
-  ///   50: #FFF9E5E5
-  ///   100: #FFF1BFBF
-  ///   200: #FFE79595
-  ///   300: #FFDD6A6A
-  ///   400: #FFD64A4A
-  ///   500: #FFCF2A2A
-  ///   600: #FFCA2525
-  ///   700: #FFC31F1F
-  ///   800: #FFBD1919
-  ///   900: #FFB20F0F
+  ///   50: #FFEFF9E3
+  ///   100: #FFD7F1BA
+  ///   200: #FFBCE88C
+  ///   300: #FFA1DF5E
+  ///   400: #FF8CD83C
+  ///   500: #FF78D119
+  ///   600: #FF70CC16
+  ///   700: #FF65C612
+  ///   800: #FF5BC00E
+  ///   900: #FF48B508
   static const MaterialColor primaryMaterial = MaterialColor(
-    0xFFCF2A2A,
+    0xFF78D119,
     <int, Color>{
-      50: Color(0xFFF9E5E5),
-      100: Color(0xFFF1BFBF),
-      200: Color(0xFFE79595),
-      300: Color(0xFFDD6A6A),
-      400: Color(0xFFD64A4A),
-      500: Color(0xFFCF2A2A),
-      600: Color(0xFFCA2525),
-      700: Color(0xFFC31F1F),
-      800: Color(0xFFBD1919),
-      900: Color(0xFFB20F0F),
+      50: Color(0xFFEFF9E3),
+      100: Color(0xFFD7F1BA),
+      200: Color(0xFFBCE88C),
+      300: Color(0xFFA1DF5E),
+      400: Color(0xFF8CD83C),
+      500: Color(0xFF78D119),
+      600: Color(0xFF70CC16),
+      700: Color(0xFF65C612),
+      800: Color(0xFF5BC00E),
+      900: Color(0xFF48B508),
     },
   );
 }

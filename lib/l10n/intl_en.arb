@@ -1,6 +1,8 @@
 {
     "@@locale": "en",
 
+    "app_name": "App name en",
+
     "ok": "OK",
     "cancel": "Cancel"
 }

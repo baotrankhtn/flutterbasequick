@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbasequick/presentation/pages/demo/demo_page.dart';
 
 class RoutePaths {
-  // TODO: Remove this demo
-  static const String X = "/x";
+  static const String DEMO = "/demo";
 }
 
 class Routes {
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RoutePaths.X:
-      // List<dynamic> args = settings.arguments as List<dynamic>;
-      // var x1 = args[0] as String?;
-      // var x2 = args[1] as int?;
-      // return MaterialPageRoute(builder: (_) => XPage(), settings: settings);
+      case RoutePaths.DEMO:
+        List<dynamic> args = settings.arguments as List<dynamic>;
+        var title = args[0] as String?;
+        return MaterialPageRoute(
+            builder: (_) => DemoPage(title: title ?? ""), settings: settings);
       default:
         return null;
     }

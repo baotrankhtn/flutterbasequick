@@ -1,5 +1,7 @@
 {
     "@@locale": "vi",
+
+    "app_name": "App name vi",
     
     "ok": "OK",
     "cancel": "Huỷ"
