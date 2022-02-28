@@ -62,7 +62,7 @@ class InfoDialog extends BaseDialog {
                     align: TextAlign.center,
                     maxLine: 5,
                   ),
-            SizedBox(height: content.isEmpty ? 8 : 28),
+            SizedBox(height: content.isEmpty ? 8 : 24),
 
             // Button
             CustomButton(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutterbasequick/presentation/dialog/confirm_dialog.dart';
 import 'package:flutterbasequick/presentation/widget/toolbar_page.dart';
 import '/bloc/base/locale/locale_bloc.dart';
 import '/bloc/base/locale/locale_state.dart';
@@ -17,7 +18,7 @@ import '/presentation/widget/base/custom_text.dart';
 
 class DemoPage extends StatefulWidget {
   final String title;
-  DemoPage({Key? key, required this.title}) : super(key: key);
+  const DemoPage({Key? key, required this.title}) : super(key: key);
 
   @override
   _DemoPageState createState() => _DemoPageState();
@@ -120,7 +121,12 @@ class _DemoPageState extends State<DemoPage>
           CustomText(
             'You have pushed the FLOATING button this many times:',
           ),
-          BlocBuilder<DemoBloc, DemoState>(builder: (context, state) {
+          BlocBuilder<DemoBloc, DemoState>(buildWhen: (context, state) {
+            if (state is DemoIntState) {
+              return true;
+            }
+            return false;
+          }, builder: (context, state) {
             if (state is DemoIntState) {
               return CustomText(
                 '${state.value}',
@@ -185,6 +191,18 @@ class _DemoPageState extends State<DemoPage>
             "SHOW OK DIALOG",
             onTap: () {
               InfoDialog(
+                      context: context,
+                      title: "Hello",
+                      content: "Empty content",
+                      callbackPositive: () {})
+                  .show();
+            },
+          ),
+          const SizedBox(height: 8),
+          CustomButton(
+            "SHOW CONFIRM DIALOG",
+            onTap: () {
+              ConfirmDialog(
                       context: context,
                       title: "Hello",
                       content: "Empty content",

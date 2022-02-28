@@ -91,7 +91,7 @@ class ConfirmDialog extends BaseDialog {
                     align: TextAlign.center,
                     maxLine: 5,
                   ),
-            SizedBox(height: content.isEmpty ? 8 : 28),
+            SizedBox(height: content.isEmpty ? 8 : 24),
 
             (isShowButtonVertically == true)
                 ? Column(
