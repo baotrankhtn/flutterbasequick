@@ -6,6 +6,7 @@ class FlavorValues {
   });
 
   final String appUrl;
+  // final String appUrl2
 }
 
 class FlavorConfig {

@@ -79,6 +79,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Unknown error`
+  String get error_unknown {
+    return Intl.message(
+      'Unknown error',
+      name: 'error_unknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet`
+  String get error_no_internet {
+    return Intl.message(
+      'No internet',
+      name: 'error_no_internet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

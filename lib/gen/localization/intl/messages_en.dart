@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name": MessageLookupByLibrary.simpleMessage("App name en"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "error_no_internet":
+            MessageLookupByLibrary.simpleMessage("No internet"),
+        "error_unknown": MessageLookupByLibrary.simpleMessage("Unknown error"),
         "ok": MessageLookupByLibrary.simpleMessage("OK")
       };
 }

@@ -1,1 +1,4 @@
-class BaseState {}
+class BaseState {
+  bool isSuccessful = true;
+  String message = "";
+}

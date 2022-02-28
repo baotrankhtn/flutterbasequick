@@ -24,6 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name": MessageLookupByLibrary.simpleMessage("App name vi"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
+        "error_no_internet":
+            MessageLookupByLibrary.simpleMessage("Không có kết nối internet"),
+        "error_unknown": MessageLookupByLibrary.simpleMessage(
+            "Đã có lỗi xảy ra. Vui lòng thử lại"),
         "ok": MessageLookupByLibrary.simpleMessage("OK")
       };
 }

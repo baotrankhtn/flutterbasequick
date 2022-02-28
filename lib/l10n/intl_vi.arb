@@ -4,5 +4,8 @@
     "app_name": "App name vi",
     
     "ok": "OK",
-    "cancel": "Huỷ"
+    "cancel": "Huỷ",
+
+    "error_unknown": "Đã có lỗi xảy ra. Vui lòng thử lại",
+    "error_no_internet": "Không có kết nối internet"
 }

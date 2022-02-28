@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutterbasequick/presentation/dialog/confirm_dialog.dart';
-import 'package:flutterbasequick/presentation/widget/toolbar_page.dart';
+import '/configs/service_locator.dart';
+import '/presentation/dialog/confirm_dialog.dart';
+import '/presentation/widget/toolbar_page.dart';
 import '/bloc/base/locale/locale_bloc.dart';
 import '/bloc/base/locale/locale_state.dart';
 import '/bloc/demo/demo_bloc.dart';
@@ -42,7 +43,7 @@ class _DemoPageState extends State<DemoPage>
     super.initState();
 
     // Bloc
-    _bloc = DemoBloc();
+    _bloc = DemoBloc(appRepository: locator.get());
   }
 
   @override
@@ -235,12 +236,16 @@ class _DemoPageState extends State<DemoPage>
           BlocConsumer<DemoBloc, DemoState>(listener: (context, state) {
             if (state is DemoLoadingState) {
               showLoading();
-            } else {
+            } else if (state is DemoDismissLoadingState) {
               dismissLoading();
+            } else if (state is DemoNetworkState) {
+              if (!state.isSuccessful) {
+                showError(state.message);
+              }
             }
           }, builder: (context, state) {
             if (state is DemoNetworkState) {
-              return CustomText("Result: ${state.data}");
+              return CustomText("Result: ${state.data?.toMap()}");
             }
             return Container();
           })

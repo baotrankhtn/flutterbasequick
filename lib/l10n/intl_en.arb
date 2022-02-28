@@ -4,5 +4,8 @@
     "app_name": "App name en",
 
     "ok": "OK",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+
+    "error_unknown": "Unknown error",
+    "error_no_internet": "No internet"
 }
