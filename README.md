@@ -38,7 +38,12 @@
      |- utils/
      |- values/ -> Dimensions, font sizes
   |- configs/ -> Important configurations: constants, flavors, routes, IoC
-  |- data/ --------------------> [MODEL] Models, repositories
+  |- data/ --------------------> [MODEL]
+     |- exceptions/
+     |- local/
+     |- models/
+     |- remote/
+     |- app_repository.dart
   |- l10n/ -> Strings
   |- presentation/ ------------> [VIEW]
      |- dialogs/
