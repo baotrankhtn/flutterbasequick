@@ -64,6 +64,4 @@ flutter pub run intl_utils:generate REM generate localizations if needed
 ```  
 
 # Add flavors
-
-
-> Copyright (c)
+Check [Android & iOS configurations](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b)
