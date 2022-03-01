@@ -23,6 +23,8 @@
 **[shared_preferences](https://pub.dev/packages/shared_preferences)**: Local persistence.  
 
 # Project structure
+***Suppose that there are 2 flavors: dev (development mode) & prod (production mode)***       
+
 ```
 - assets/ -> Resources 
   |- colors/
@@ -50,15 +52,18 @@
      |- pages/
      |- widgets/
   |- app.dart -> Base app widget configs
-  |- main-prod.dart -> App entry for production mode
-  |- main.dart -> App entry for development mode
+  |- main-prod.dart -> App entry for prod flavor
+  |- main.dart -> App entry for dev flavor
 ```
 
 # Setup
-Just this section is enough to inject base files to client project
+Just this section is enough to inject base files to client project.  
 ***Create client project***
 
 ***Inject base files***
+
+# Add flavors
+Check [Android & iOS configurations](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b)
 
 # Common commands
 ***Generating files***
@@ -73,10 +78,33 @@ flutter pub run flutter_launcher_icons:main REM genetate launcher icons
 ```  
 flutter pub run intl_utils:generate REM generate localizations if needed
 ```  
-***Run & Build***
 
-# Add flavors
-Check [Android & iOS configurations](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b)
+***Run & Build dev flavor***
+```
+flutter run --flavor dev -t lib/main.dart REM run debug
+```
+```
+flutter run --release --flavor dev -t lib/main.dart REM run release
+```
+```
+flutter build <apk/ipa/...> --flavor dev -t lib/main.dart REM build debug
+```
+```
+flutter build <apk/ipa/...> --release --flavor dev -t lib/main.dart REM build release
+```
+***Run & Build prod flavor***
+```
+flutter run --flavor prod -t lib/main-prod.dart REM run debug
+```
+```
+flutter run --release --flavor prod -t lib/main-prod.dart REM run release
+```
+```
+flutter build <apk/ipa/...> --flavor prod -t lib/main-prod.dart REM build debug
+```
+```
+flutter build <apk/ipa/...> --release --flavor prod -t lib/main-prod.dart REM build release
+```
 
 # Acknowledgements
 Inspired by ***Fractal Mobile Team***'s ideas, projects, people.  
