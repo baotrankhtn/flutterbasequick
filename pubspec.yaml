@@ -77,7 +77,7 @@ flutter_intl:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/launchers/ic_launcher.png"
+  image_path: "assets/launchers/ic_launcher.png" # Note: Not transparent image
   adaptive_icon_background: "#ffffff"
   adaptive_icon_foreground: "assets/launchers/ic_launcher_android_foreground.png"
 
