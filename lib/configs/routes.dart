@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterbasequick/presentation/pages/demo/demo_page.dart';
+import '/presentation/pages/demo/demo_page.dart';
 
 class RoutePaths {
   static const String DEMO = "/demo";

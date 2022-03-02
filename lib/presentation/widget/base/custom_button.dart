@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterbasequick/common/values/dimens.dart';
+import '/common/values/dimens.dart';
 import '/common/values/font_sizes.dart';
 
 import 'custom_text.dart';

@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutterbasequick/gen/assets/colors.gen.dart';
+import '/gen/assets/colors.gen.dart';
 
 import 'bloc/base/app/app_bloc.dart';
 import 'bloc/base/locale/locale_bloc.dart';

@@ -1,4 +1,4 @@
-import 'package:flutterbasequick/data/models/request/base/base_request.dart';
+import '/data/models/request/base/base_request.dart';
 
 class DemoRequest extends BaseRequestData {
   final String? query1;

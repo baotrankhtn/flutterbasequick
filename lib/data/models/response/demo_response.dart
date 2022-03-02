@@ -1,5 +1,5 @@
-import 'package:flutterbasequick/data/models/demo_info.dart';
-import 'package:flutterbasequick/data/models/response/base/base_response.dart';
+import '/data/models/demo_info.dart';
+import '/data/models/response/base/base_response.dart';
 
 class DemoResponse extends BaseResponseData<DemoInfo> {
   @override

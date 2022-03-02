@@ -1,4 +1,4 @@
-import 'package:flutterbasequick/data/models/request/demo_request.dart';
+import '/data/models/request/demo_request.dart';
 
 import '/data/models/response/demo_response.dart';
 
