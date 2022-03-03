@@ -59,10 +59,15 @@
 # Setup
 Just this section is enough to inject base files to client project.  
 ***Create client project***
-
+```
+flutter create --org <com.your> <package> REM com.your.package
+```
+then change current directory to your newly created project (important!!!)   
 ***Inject base files***
-
-# Add flavors
+```
+git clone https://github.com/baotrankhtn/flutterbasequick.git && cp -R flutterbasequick/assets ./ && cp -R flutterbasequick/lib ./ && cp -R flutterbasequick/test ./ && rm -rf flutterbasequick
+```
+***Add flavors***
 Check [Android & iOS configurations](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b)
 
 # Common commands
