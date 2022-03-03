@@ -243,8 +243,13 @@ class _DemoPageState extends State<DemoPage>
                 showError(state.message);
               }
             }
+          }, buildWhen: (prev, cur) {
+            if (cur is DemoNetworkState) {
+              return true;
+            }
+            return false;
           }, builder: (context, state) {
-            if (state is DemoNetworkState) {
+            if (state is DemoNetworkState && state.isSuccessful) {
               return CustomText("Result: ${state.data?.toMap()}");
             }
             return Container();
