@@ -60,9 +60,9 @@
 Just this section is enough to inject base files to client project.  
 ***Create client project***
 ```
-flutter create --org <com.your> <package> REM com.your.package
+flutter create --org <com.project> <example> REM com.project.example
 ```
-then change current directory to your newly created project (important!!!)   
+then change current directory to the newly created project (important!!!)   
 ***Inject base files***
 ```
 git clone https://github.com/baotrankhtn/flutterbasequick.git && cp -R flutterbasequick/assets ./ && cp -R flutterbasequick/lib ./ && cp -R flutterbasequick/test ./ && cp -R flutterbasequick/pubspec.yaml ./ && rm -rf flutterbasequick && flutter pub get
