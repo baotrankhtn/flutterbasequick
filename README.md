@@ -65,7 +65,7 @@ flutter create --org <com.project> <example> REM com.project.example
 then change current directory to the newly created project (important!!!)   
 ***Inject base files***
 ```
-git clone https://github.com/baotrankhtn/flutterbasequick.git && cp -R flutterbasequick/assets ./ && cp -R flutterbasequick/lib ./ && cp -R flutterbasequick/test ./ && cp -R flutterbasequick/pubspec.yaml ./ && rm -rf flutterbasequick && flutter pub get
+git clone https://github.com/baotrankhtn/flutterbasequick.git && cp -R flutterbasequick/assets ./ && cp -R flutterbasequick/lib ./ && cp -R flutterbasequick/test ./ && cp -R flutterbasequick/pubspec.yaml ./ && cp -R flutterbasequick/.gitignore ./ && rm -rf flutterbasequick && flutter pub get
 ```
 ***Add flavors***   
 Check [Android & iOS configurations](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b)
