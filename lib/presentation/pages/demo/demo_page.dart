@@ -55,7 +55,7 @@ class _DemoPageState extends State<DemoPage>
       child: ToolbarPage(
         title: widget.title,
         toolbarBackgroundColor: ColorName.primary,
-        child: Center(
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               demoAccessResources(),
